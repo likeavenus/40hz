@@ -6,16 +6,23 @@
     right: 0;
     width: 100%;
     height: 100vh;
-    z-index: 100;
-    display: flex;
     flex-direction: column;
     align-items: center;
-    background: #000;
+    background: rgba(0, 0, 0, 0.2);
     padding: 60px 0;
     box-sizing: border-box;
+    transition: all .3s ease;
+    opacity: 0;
+    z-index: -100;
+
+    &.popup--active {
+        opacity: 1;
+        z-index: 100;
+    }
 }
 
 .popup__title {
     font-size: 18px;
     font-weight: normal;
+    text-align: center;
 }

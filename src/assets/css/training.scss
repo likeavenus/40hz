@@ -1,0 +1,110 @@
+@import "variables.scss";
+
+.training {
+    padding: 40px 0;
+
+    @media (min-width: $laptop) {
+        padding: 150px 0;
+    }
+}
+
+.trainig__list {
+    display: grid;
+    grid-template-columns: 280px;
+    grid-row-gap: 50px;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    @media (min-width: $tablet) {
+        grid-template-columns: repeat(2, 280px);
+        grid-column-gap: 60px;
+        grid-row-gap: 50px;
+    }
+
+    @media (min-width: $laptop) {
+        margin-bottom: 100px;
+        grid-column-gap: 140px;
+        grid-template-columns: repeat(3, 280px);
+    }
+
+    @media (min-width: $desktop2) {
+        margin-bottom: 120px;
+        grid-template-columns: repeat(3, 343px);
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        grid-gap: 178px 222px;
+    }
+}
+
+.training__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // width: 280px;
+
+    // &:not(:last-child) {
+    //     margin-bottom: 40px;
+
+    //     @media (min-width: $laptop) {
+    //         margin-bottom: 80px;
+    //     }
+    // }
+
+    // @media (min-width: $desktop2) {
+    //     width: auto;
+    // }
+}
+
+.training__title {
+    margin-bottom: 40px;
+
+    @media (min-width: $tablet) {
+        margin-bottom: 60px;
+    }
+
+    @media (min-width: $laptop) {
+        margin-bottom: 80px;
+    }
+}
+
+.training__item-title {
+    color: $orange;
+    font-size: 21px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+
+    @media (min-width: $laptop) {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+}
+
+.training__img {
+    margin-bottom: 20px;
+}
+
+.training__info {
+    font-size: 16px;
+    text-align: center;
+
+    @media (min-width: $laptop) {
+        font-size: 19px;
+    }
+
+    @media (min-width: $desktop2) {
+        font-size: 26px;
+    }
+}
+
+.training__help-info {
+    font-size: 14px;
+    text-align: center;
+    padding: 0 20px;
+
+    @media (min-width: $laptop) {
+        font-size: 21px;
+        padding: 0 60px;
+    }
+}

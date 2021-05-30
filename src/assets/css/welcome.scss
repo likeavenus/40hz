@@ -3,6 +3,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url('../img//welcome/welcome_bg.jpg');
+    background-position: center center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 .welcome__title-box {
@@ -11,14 +17,24 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 100px;
     margin-bottom: 40px;
 }
 
 .welcome__title {
     font-size: 100px;
-    font-weight: normal;
     margin-bottom: 20px;
+
+    & span {
+        font-size: 60px;
+    }
+
+    @media (min-width: $laptop) {
+        font-size: 150px;
+
+        & span {
+            font-size: 80px;
+        }
+    }
 }
 
 .welcome__subtitle {
@@ -27,4 +43,17 @@
 
 .social_networks {
     display: flex;
+
+    @media (min-width: $laptop) {
+        position: absolute;
+        left: 50px;
+        bottom: 20px;
+    }
+}
+
+.social_networks-link img {
+    transition: all .2s ease;
+    &:hover {
+        filter: drop-shadow(2px 2px 2px #fff);
+    }
 }
