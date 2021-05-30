@@ -1,11 +1,45 @@
 @import "fonts.scss";
 @import "~normalize.css";
+@import "colors.scss";
+@import "popup.scss";
+@import "welcome.scss";
+
+html {
+    touch-action: manipulation;
+}
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: $robotoRegular;
+    background-color: #121212;
+    min-height: 100vh;
+    color: #fff;
 }
 h1 {
     font-size: 27px;
-    color: rebeccapurple;
     font-family: 'Roboto', sans-serif;
+}
+
+h1,h2,h3,h4 {
+    margin: 0;
+}
+.button {
+    border: none;
+    color: #fff;
+    background-color: $buttonOrange;
+    border-radius: 50px;
+    padding: 12px 17.5px;
+    font-size: 18px;
+
+    @media (min-width: 1280px) {
+        padding: 24px 35px;
+        font-size: 26px;
+    }
+}
+
+ul {
+    padding: 0;
+}
+
+.main {
+    width: 100%;
 }
