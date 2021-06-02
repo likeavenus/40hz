@@ -4,6 +4,7 @@
 @import "welcome.scss";
 @import "training.scss";
 @import "reviews.scss";
+@import "courses.scss";
 
 html {
     touch-action: manipulation;
@@ -70,6 +71,7 @@ h1,h2,h3,h4 {
 ul {
     padding: 0;
     margin: 0;
+    list-style: none;
 }
 
 p {
