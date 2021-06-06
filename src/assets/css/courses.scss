@@ -119,3 +119,26 @@
         font-size: 26px;
     }
 }
+
+
+.courses__popup {
+    opacity: 0;
+    transition: all .5s ease;
+    pointer-events: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    transform: translateX(-100%);
+    background: #000;
+
+    &.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(0);
+    }
+}

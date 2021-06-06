@@ -1,0 +1,15 @@
+.teachers__title {
+    margin-bottom: 40px;
+}
+
+.teachers__subtitle {
+    font-weight: normal;
+    font-size: 15px;
+    width: 280px;
+    margin: 0 auto 50px;
+    text-align: center;
+
+    @media (min-width: $laptop) {
+        font-size: 26px;
+    }
+}
