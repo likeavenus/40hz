@@ -145,3 +145,23 @@
         right: 6%;
     }
 }
+
+@media (min-width: $desktop1) {
+    .swiper-button-prev {
+        left: 3%;
+    }
+
+    .swiper-button-next {
+        right: 3%;
+    }
+}
+
+@media (min-width: $desktop2) {
+    .swiper-button-prev {
+        left: 5%;
+    }
+
+    .swiper-button-next {
+        right: 5%;
+    }
+}
