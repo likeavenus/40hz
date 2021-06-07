@@ -122,8 +122,6 @@
 
 
 .courses__popup {
-    opacity: 0;
-    transition: all .5s ease;
     pointer-events: none;
     position: fixed;
     height: 100%;
@@ -132,13 +130,74 @@
     top: 0;
     bottom: 0;
     right: 0;
-    z-index: 100;
-    transform: translateX(-100%);
-    background: #000;
+    z-index: -100;
+    overflow: hidden;
+    display: none;
+
+    & .curtain {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(-101%);
+        background: $black;
+        transition: all .5s ease;
+        box-shadow: 1px 0 40px rgba(235, 234, 234, .3);
+    }
+}
+
+.courses__popup-box {
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    opacity: 0;
+    background-color: #000;
 
     &.active {
         opacity: 1;
-        pointer-events: auto;
+    }
+}
+
+.courses__back {
+}
+
+.courses__popup.active {
+    z-index: 100;
+    pointer-events: auto;
+    display: block;
+
+    & .curtain {
+        animation: curtain 1s ease 0s 1 forwards;        
+    }
+}
+
+.courses__popup-wrap {
+    width: 280px;
+    margin: 0 auto;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.courses__popup-title {
+    margin-bottom: 30px;
+}
+
+.courses__text {
+    margin-bottom: 20px;
+}
+
+@keyframes curtain {
+    50% {
         transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-101%);
     }
 }

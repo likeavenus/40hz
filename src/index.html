@@ -122,7 +122,7 @@
               </div>
         </section>
         <section class="courses" id="courses">
-            <h2 class="title courses__title"> Курсы</h2>
+            <h2 class="title courses__title">Курсы</h2>
             <ul class="courses__list">
                 <li class="courses__item" data-course="dj">
                     <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -139,7 +139,7 @@
                     <p class="courses__info">Диджеинг</p>
                     <p class="courses__price">14 900 ₽</p>
                 </li>
-                <li class="courses__item" data-course="basic-course">
+                <li class="courses__item" data-course="basic">
                     <svg width="100" height="104" viewBox="0 0 100 104" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0)">
                         <path d="M24.9999 104H79.9999C83.6818 104 86.6666 100.896 86.6666 97.0667V27.7333C86.6552 24.5814 84.6011 21.8341 81.6666 21.0461V6.93333C81.6666 3.10416 78.6818 0 74.9999 0H24.9999C18.5596 0.00764164 13.3406 5.43545 13.3333 12.1333V91.8667C13.3406 98.5646 18.5596 103.992 24.9999 104ZM83.3333 27.7333V97.0667C83.3333 98.9813 81.8409 100.533 79.9999 100.533H26.6666V24.2667H79.9999C81.8409 24.2667 83.3333 25.8187 83.3333 27.7333ZM24.9999 3.46667H74.9999C76.8409 3.46667 78.3333 5.01875 78.3333 6.93333H24.9999C24.0794 6.93333 23.3333 7.70937 23.3333 8.66667C23.3333 9.62396 24.0794 10.4 24.9999 10.4H78.3333V13.8667H24.9999C24.0794 13.8667 23.3333 14.6427 23.3333 15.6C23.3333 16.5573 24.0794 17.3333 24.9999 17.3333H78.3333V20.8H24.9999C20.3975 20.8 16.6666 16.9198 16.6666 12.1333C16.6666 7.34687 20.3975 3.46667 24.9999 3.46667ZM16.6666 20.6076C18.4556 22.5122 20.799 23.7497 23.3333 24.128V100.36C19.4559 99.5307 16.6716 95.9835 16.6666 91.8667V20.6076Z" fill="white"/>
@@ -244,8 +244,14 @@
     </main>
 
     <div class="courses__popup">
+        <div class="curtain"></div>
         <div class="courses__popup-box">
-            <h2 class="courses__popup-title"></h2>
+            <div class="courses__popup-wrap">
+                <h2 class="courses__popup-title"></h2>
+                <p class="courses__text"></p>
+                <p class="courses__cost"></p>
+                <button class="courses__back">Назад</button>
+            </div>
         </div>
     </div>
 
