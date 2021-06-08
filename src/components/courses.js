@@ -1,4 +1,4 @@
-import { coursesInfo } from './constants';
+import { coursesInfo, closeCoursesPopup } from './constants';
 
 export default function Courses() {
     const coursesItems = document.querySelectorAll('.courses__item');
@@ -29,22 +29,15 @@ export default function Courses() {
         })
     });
 
-    coursesBackBtn.addEventListener('click', () => {
-        curtain.style.animation = 'none';
-        curtain.offsetHeight;
-        curtain.style.animation = null; 
-
-        setTimeout(() => {
-            coursesTitle.innerText = '';
-            coursesText.innerText = '';
-            coursesCost.innerText = '';
-            coursesInfoWrap.classList.remove('active');
-            coursesBox.classList.remove('active');
-        }, 500);
-
-        setTimeout(() => {
-            coursesPopup.classList.remove('active');
-        }, 1000);
-    });
-
+    coursesBackBtn.addEventListener('click',
+     () => closeCoursesPopup(
+        curtain,
+        coursesTitle,
+        coursesText,
+        coursesCost,
+        coursesInfoWrap,
+        coursesBox,
+        coursesPopup
+        )
+    );
 }
