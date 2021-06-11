@@ -10,6 +10,7 @@ export default function Courses() {
     const coursesInfoWrap = document.querySelector('.courses__popup-wrap');
     const coursesBox = document.querySelector('.courses__popup-box');
     const curtain = document.querySelector('.curtain');
+    const coursesAdv = document.querySelector('.courses__advantages');
 
     coursesItems.forEach(item => {
         item.addEventListener('click', function() {
@@ -17,6 +18,14 @@ export default function Courses() {
             const thisCourseTitle = this.querySelector('.courses__info').innerText;
             const thisCoursePrice = this.querySelector('.courses__price').innerText;
             const currentCoursesText = coursesInfo.find(item => item.name === thisCourse).text;
+            const currentCoursesAdvs = coursesInfo.find(item => item.name === thisCourse).listItems;
+            if (currentCoursesAdvs) {
+                currentCoursesAdvs.forEach(advantage => {
+                    const currentAdvantage = document.createElement('li');
+                    currentAdvantage.innerText = advantage;
+                    coursesAdv.append(currentAdvantage);
+                });
+            }
             coursesPopup.classList.add('active');
             
             setTimeout(() => {
@@ -37,7 +46,8 @@ export default function Courses() {
         coursesCost,
         coursesInfoWrap,
         coursesBox,
-        coursesPopup
+        coursesPopup,
+        coursesAdv,
         )
     );
 }

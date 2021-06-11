@@ -14,7 +14,7 @@ export const coursesInfo = [
     }
 ];
 
-export const closeCoursesPopup = (curtain, coursesTitle, coursesText, coursesCost, coursesInfoWrap, coursesBox, coursesPopup) => {
+export const closeCoursesPopup = (curtain, coursesTitle, coursesText, coursesCost, coursesInfoWrap, coursesBox, coursesPopup, coursesAdv) => {
     curtain.style.animation = 'none';
     curtain.offsetHeight;
     curtain.style.animation = null; 
