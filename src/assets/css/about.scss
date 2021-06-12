@@ -1,0 +1,75 @@
+.about {
+    & .swiper-button-prev{
+        top:45%;
+    }
+    & .swiper-button-next{
+        top:45%;
+    }
+    & .slider__slide{
+        padding: 0;
+        border: none;
+    }
+}
+
+.about__title {
+   margin: 60px 0 40px 0;
+}
+
+.about__subtitle {
+   font-weight: normal;
+   font-size: 15px;
+   width: 280px;
+   margin: 0 auto 50px;
+   text-align: center;
+
+   @media (min-width: $tablet) {
+       font-size: 14px;
+       width: 715px;
+   }
+   @media (min-width: $laptop) {
+       font-size: 21px;
+       width: 1280px;
+   }
+}
+
+.slide {
+    width: 200px;
+    position: relative;
+    @media (min-width: $tablet) {
+        width: 580px;
+    }
+    @media (min-width: $desktop1) {
+        width: 1150px;
+    }
+}
+
+.slide__img {
+    width: 200px;
+    margin-bottom: 10px;
+    
+    @media (min-width: $tablet) {
+        width: 580px;
+    }
+    @media (min-width: $desktop1) {
+        width: 1150px;
+    }
+}
+
+.slide__text {
+    text-align: center;
+    
+    @media (min-width: $tablet) {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+        width: 50%;
+        text-align: left;
+        background-color: rgba(24, 24, 24, 0.5);
+        padding: 10px;
+    }
+}
+
+.swiper__buttons {
+    top:45%;
+}
+
