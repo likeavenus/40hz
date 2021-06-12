@@ -1,3 +1,6 @@
+.teachers {
+
+}
 .teachers__title {
     margin-bottom: 40px;
 }
@@ -9,7 +12,58 @@
     margin: 0 auto 50px;
     text-align: center;
 
+    @media (min-width: $tablet) {
+        font-size: 14px;
+        width: 715px;
+    }
     @media (min-width: $laptop) {
-        font-size: 26px;
+        font-size: 21px;
+        width: 1280px;
     }
 }
+
+.teachers__gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    @media (min-width: $tablet) {
+        width: 715px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+        .gallery__column--last {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    @media (min-width: $laptop) {
+        width: 1200px;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .gallery__column--last {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.gallery__image{
+    & img{
+        width: 220px;
+        margin: 10px;
+
+        @media (min-width: $tablet) {
+            width: 265px;
+        }
+
+        @media (min-width: $laptop) {
+            width: 380px;
+        }
+    }
+}
+
