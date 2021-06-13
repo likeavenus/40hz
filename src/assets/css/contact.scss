@@ -1,0 +1,83 @@
+.contact__title {
+   margin: 60px 0 40px 0;
+}
+
+.contact__subtitle {
+   font-weight: normal;
+   font-size: 15px;
+   width: 280px;
+   margin: 0 auto 50px;
+   text-align: center;
+
+   @media (min-width: $tablet) {
+       font-size: 14px;
+       width: 715px;
+   }
+   @media (min-width: $laptop) {
+       font-size: 21px;
+       width: 1280px;
+   }
+}
+
+.contact__info{
+   width: 250px;
+   margin: auto;
+   display: flex;
+   flex-direction: column;
+
+   @media (min-width: $tablet) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      
+  }
+}
+
+.contact__text {
+   margin:0 10px 10px 0 ;
+}
+
+.contact__form {
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   @media (min-width: $tablet) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 650px;
+  }
+}
+
+.contact__field {
+   width: 250px;
+   margin: 10px;
+
+   & .contact__input{
+      background-color: rgba(0, 0, 0, 0);
+      border: #fff solid 1px; 
+   }
+   
+}
+.input{
+   height: 30px; 
+}
+.contact__button {
+   border-radius: 50px;
+   border: none;
+   width: 150px;
+   height: 40px;
+   background-color: #f68a42;
+   color: #fff;
+
+}
+
+.contact__input {
+   width: 100%;
+   margin-bottom: 10px;
+}
