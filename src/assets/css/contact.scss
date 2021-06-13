@@ -24,6 +24,7 @@
    flex-direction: column-reverse;
    width: 80%;
    margin: auto;
+   margin-bottom: 80px;
    @media (min-width: $tablet) {
       width: 100%;
       flex-direction: row;
@@ -50,17 +51,17 @@
    
 }
 
-.input{
+.form__input__block{
    display: flex;
    flex-direction: column;
    @media (min-width: $tablet) {
       width: 80%;
       margin-left: auto;
       margin-right: 0;
-  }
-  @media (min-width: $desktop1) {
-     width: 49%;
-  }
+   }
+   @media (min-width: $desktop1) {
+      width: 49%;
+   }
 }
 
 .contact__info{
@@ -74,7 +75,7 @@
 }
 
 .input__field {
-   background-color: rgba(0, 0, 0, 0);
+   background-color: transparent;
    border: #fff solid 1px;
    color: #fff;
    height: 30px;
@@ -95,7 +96,8 @@
    }
 }
 .textarea__field{
-   background-color: rgba(0, 0, 0, 0);
+   width: 98%;
+   background-color: transparent;
    border: #fff solid 1px;
    color: #fff;
    margin-bottom: 10px; 
