@@ -142,10 +142,10 @@
         left: 0;
         top: 0;
         bottom: 0;
-        transform: translateX(-101%);
+        transform: translateX(-105%);
         background: $black;
         transition: all .5s ease;
-        box-shadow: 1px 0 40px rgba(235, 234, 234, .3);
+        box-shadow: 1px 0 30px rgba(235, 234, 234, .3);
     }
 }
 
@@ -198,6 +198,6 @@
     }
 
     100% {
-        transform: translateX(-101%);
+        transform: translateX(-105%);
     }
 }
