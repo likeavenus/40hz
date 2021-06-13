@@ -1,0 +1,167 @@
+@import "./variables.scss";
+
+.reviews {
+    margin-bottom: 40px;
+}
+
+.swiper-container {
+    padding-bottom: 40px;
+}
+
+.reviews__title {
+    margin-bottom: 40px;
+
+    @media (min-width: $laptop) {
+        margin-bottom: 96px;
+    }
+}
+
+.slider__slide {
+    width: 260px;
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+
+    @media (min-width: $tablet) {
+        width: 500px;
+    }
+
+    @media (min-width: $laptop) {
+        width: 1000px;
+        grid-template-columns: 220px 600px;
+        padding: 107px 42px;
+        box-sizing: border-box;
+        grid-column-gap: 80px;
+        border: 3px solid $orange;
+        align-items: center;
+    }
+
+    @media (min-width: $desktop1) {
+        width: 1244px;
+        grid-template-columns: 250px 776px;
+        grid-column-gap: 124px;
+    }
+}
+
+.slide__ava {
+    width: 220px;
+    margin-bottom: 20px;
+}
+
+.slide-top {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide__name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+
+    @media (min-width: $tablet) {
+        font-size: 25px;
+    }
+}
+
+.slide-bot__text {
+    font-size: 15px;
+
+    @media (min-width: $tablet) {
+        font-size: 18px;
+    }
+
+    @media (min-width: $laptop) {
+        font-size: 24px;
+    }
+
+    @media (min-width: $desktop2) {
+        font-size: 32px;
+    }
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+    top: 23%;
+    color: $orange;
+
+    @media (min-width: $laptop) {
+        top: 47%;
+    }
+}
+
+
+.swiper-pagination {
+    bottom: 0;
+    
+    & .swiper-pagination-bullet {
+        background-color: $orange;
+        transition: all .55s ease;
+        margin: 0 5px;
+        width: 8px;
+        height: 8px;
+
+        @media (min-width: $laptop) {
+            width: 14px;
+            height: 14px;
+            margin: 0 9px;
+        }
+    }
+
+    & .swiper-pagination-bullet-active {
+        width: 30px;
+        border-radius: 15px;
+
+        @media (min-width: $laptop) {
+            width: 45px;
+        }
+    }
+} 
+
+.slide__link {
+    width: 40px;
+    height: 40px;
+
+    & img {
+        width: 100%;
+        transition: all .2s ease;
+    }
+
+    &:hover {
+        & img {
+            filter: drop-shadow(2px 2px 2px #fff);
+        }
+    }
+}
+
+@media (min-width: $laptop) {
+    .swiper-button-prev {
+        left: 6%;
+    }
+
+    .swiper-button-next {
+        right: 6%;
+    }
+}
+
+@media (min-width: $desktop1) {
+    .swiper-button-prev {
+        left: 3%;
+    }
+
+    .swiper-button-next {
+        right: 3%;
+    }
+}
+
+@media (min-width: $desktop2) {
+    .swiper-button-prev {
+        left: 5%;
+    }
+
+    .swiper-button-next {
+        right: 5%;
+    }
+}
