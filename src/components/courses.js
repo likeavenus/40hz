@@ -12,6 +12,7 @@ export default function Courses() {
     const curtain = document.querySelector('.curtain');
     const coursesAdv = document.querySelector('.courses__advantages');
 
+    /** TODO develop: переделать отображение попапа на копирование из template*/
     coursesItems.forEach(item => {
         item.addEventListener('click', function() {
             const thisCourse = this.getAttribute('data-course');
