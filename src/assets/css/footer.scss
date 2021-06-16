@@ -3,6 +3,7 @@
    justify-content: center;
    width: 100%;
    flex-wrap: wrap;
+   margin-bottom: 20px;
    @media (min-width: $desktop1){
       justify-content: space-between;
       width: 60%;
@@ -21,8 +22,9 @@
    }
 }
 
-.footer__school__name{
+.footer__school-name{
    margin: auto 0;
+   text-transform: uppercase;
 }
 
 .footer__description{
@@ -38,8 +40,14 @@
    }
 }
 
-.social_networks--footer{
+.social__networks--footer{
    position: relative;
    left: 0;
    bottom: 0;
 }
+
+.logo__img {
+   stroke: #fff;
+   stroke-miterlimit: 22.9256;
+   stroke-width: 0.5669px;
+ }
