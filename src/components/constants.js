@@ -1,6 +1,7 @@
 export const coursesInfo = [
     {
         name: 'dj',
+        title: 'Диджеинг',
         text: 'Курс по большей степени рассчитан на новичков, но мы с радостью сможем помочь и тем, кто уже когда-то занимался Диджеингом, и хочет освежить знания. Для этого мы разработаем индивидуальную программу специально для Вас',
         listItems: [
             'Бесплатная практика и возможность записать свой лайв-сет или видео-сет',
@@ -10,21 +11,46 @@ export const coursesInfo = [
     },
     {
         name: 'basic',
+        title: 'Базовый курс',
         text: '10 занятий/10 часов. (Курс рассчитан на 3 месяца обучения)',
+        listItems: [
+            'Бесплатная практика и возможность записать свой лайв-сет или видео-сет',
+            'Обучение на современном и актуальном оборудовании Pioneer',
+            'После успешного прохождения курса у вас будет возможность продемонстрировать свои навыки на сцене клуба или в прямом эфире на радио.',
+        ]
+    },
+    {
+        name: 'pro-course',
+        title: 'PRO курс',
+        text: '10 занятий/10 часов. (Курс рассчитан на 3 месяца обучения)',
+        listItems: [
+            'Бесплатная практика и возможность записать свой лайв-сет или видео-сет',
+            'Обучение на современном и актуальном оборудовании Pioneer',
+            'После успешного прохождения курса у вас будет возможность продемонстрировать свои навыки на сцене клуба или в прямом эфире на радио.',
+        ]
+    },
+    {
+        name: 'online-course',
+        title: 'Онлайн курс',
+        text: '10 занятий/10 часов. (Курс рассчитан на 3 месяца обучения)',
+        listItems: [
+            'Бесплатная практика и возможность записать свой лайв-сет или видео-сет',
+            'Обучение на современном и актуальном оборудовании Pioneer',
+            'После успешного прохождения курса у вас будет возможность продемонстрировать свои навыки на сцене клуба или в прямом эфире на радио.',
+        ]
     }
 ];
 
-export const closeCoursesPopup = (curtain, coursesTitle, coursesText, coursesCost, coursesInfoWrap, coursesBox, coursesPopup, coursesAdv) => {
+export const closeCoursesPopup = (curtain, coursesInfoWrap, coursesBox, coursesPopup, main, pageYOffset, coursesBackBtn) => {
     curtain.style.animation = 'none';
     curtain.offsetHeight;
     curtain.style.animation = null; 
-
     setTimeout(() => {
-        coursesTitle.innerText = '';
-        coursesText.innerText = '';
-        coursesCost.innerText = '';
+        coursesBackBtn.style.display = 'none';
         coursesInfoWrap.classList.remove('active');
         coursesBox.classList.remove('active');
+        main.style.display = 'block';
+        window.scrollTo(0, pageYOffset);
     }, 500);
 
     setTimeout(() => {
