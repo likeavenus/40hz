@@ -52,6 +52,7 @@ export default function Courses() {
     const coursesText = popupContent.querySelector('.courses__text');
     const coursesInfoWrap = popupContent.querySelector('.courses__popup-wrap');
     const courseElement = popupContent.querySelector('.js-course-item');
+    const coursesAdv = popupContent.querySelector('.courses__advantages');
     const coursesBox = document.querySelector('.courses__popup-box');
     const main = document.querySelector('.main');
 
@@ -65,6 +66,7 @@ export default function Courses() {
             const thisCourseData = this.getAttribute('data-course');
             const thisCourse = coursesInfo.find(item => item.name === thisCourseData);
             courseElement.innerHTML = '';
+            coursesAdv.innerHTML = '';
 
             for (let child of this.children) {
                 courseElement.appendChild(child.cloneNode(true));
@@ -72,6 +74,11 @@ export default function Courses() {
 
             coursesTitle.innerText = thisCourse.title;
             coursesText.innerText = thisCourse.text;
+
+            thisCourse.listItems.forEach(item => {
+                coursesAdv.insertAdjacentHTML('afterbegin', `<li class="advantages__item">${item}</li>`);
+            });
+
             coursesPopup.classList.add('active');
 
             /** сохраняем текущий скролл  */

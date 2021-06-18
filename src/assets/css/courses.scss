@@ -101,6 +101,7 @@
     position: relative;
     z-index: 0;
     margin-bottom: 30px;
+    grid-area: a;
 
     & svg {
         width: 100px;
@@ -148,6 +149,20 @@
     }
 }
 
+.curtain {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-105%);
+    background: $black;
+    transition: all .5s ease;
+    box-shadow: 1px 0 30px rgba(235, 234, 234, .3);
+}
 
 .courses__popup {
     pointer-events: none;
@@ -159,33 +174,17 @@
     bottom: 0;
     right: 0;
     z-index: -100;
-    overflow: hidden;
     display: none;
     overflow: auto;
 
-    & .curtain {
-        content: '';
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        z-index: 10;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        transform: translateX(-105%);
-        background: $black;
-        transition: all .5s ease;
-        box-shadow: 1px 0 30px rgba(235, 234, 234, .3);
+    @media (min-width: $tablet) {
+        width: 700px;
+        margin: 0 auto;
     }
 
-    // @media (min-width: $tablet) {
-    //     width: 560px;
-    //     margin: 0 auto;
-    // }
-
-    // @media (min-width: $laptop) {
-    //     width: 1000px;
-    // }
+    @media (min-width: $laptop) {
+        width: 1120px;
+    }
 }
 
 .courses__popup-box {
@@ -203,6 +202,10 @@
     margin: 0 auto;
 
     @media (min-width: $tablet) {
+        margin: 0 auto;
+    }
+
+    @media (min-width: $tablet) {
         margin-left: 0;
     }
 }
@@ -211,12 +214,11 @@
     z-index: 100;
     pointer-events: auto;
     display: block;
-
-    & .curtain {
-        animation: curtain 1s ease 0s 1 forwards;        
-    }
 }
 
+.courses__popup.active + .curtain {
+    animation: curtain 1s ease 0s 1 forwards;        
+}
 .courses__popup-wrap {
     // width: 280px;
     margin: 0 auto;
@@ -238,6 +240,16 @@
 
 .courses__text {
     margin-bottom: 20px;
+    grid-area: b;
+
+    @media (min-width: $laptop) {
+        font-size: 21px;
+        margin-bottom: 0;
+    }
+
+    @media (min-width: $desktop1) {
+        font-size: 26px;
+    }
 }
 
 @keyframes curtain {
@@ -256,10 +268,29 @@
     grid-template-columns: 280px;
 
     @media (min-width: $tablet) {
-        grid-template-columns: 280px 280px;
+        grid-template-columns: 280px 1fr;
+        grid-template-areas: 
+            "a b"
+            "a c";
     }
 
     @media (min-width: $laptop) {
-        grid-template-columns: 500px 500px;
+        grid-template-columns: 280px 1fr;
+    }
+}
+
+.courses__advantages {
+    grid-area: c;
+}
+
+.advantages__item {
+    margin-bottom: 10px;
+
+    @media (min-width: $laptop) {
+        font-size: 21px;
+    }
+
+    @media (min-width: $desktop1) {
+        font-size: 26px;
     }
 }
