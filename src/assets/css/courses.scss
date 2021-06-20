@@ -101,13 +101,16 @@
     position: relative;
     z-index: 0;
     margin-bottom: 30px;
-    grid-area: a;
 
     & svg {
         width: 100px;
         margin-bottom: 26px;
         position: relative;
         z-index: 10;
+    }
+
+    @media (min-width: $tablet) {
+        grid-area: a;
     }
 
     @media (min-width: $desktop2) {
@@ -178,12 +181,12 @@
     overflow: auto;
 
     @media (min-width: $tablet) {
-        width: 700px;
+        // width: 700px;
         margin: 0 auto;
     }
 
     @media (min-width: $laptop) {
-        width: 1120px;
+        // width: 1120px;
     }
 }
 
@@ -195,6 +198,15 @@
     &.active {
         opacity: 1;
     }
+
+    @media (min-width: $tablet) {
+        width: 700px;
+        margin: 0 auto;
+    }
+
+    @media (min-width: $laptop) {
+        width: 1120px;
+    }
 }
 
 .courses__back {
@@ -203,10 +215,6 @@
 
     @media (min-width: $tablet) {
         margin: 0 auto;
-    }
-
-    @media (min-width: $tablet) {
-        margin-left: 0;
     }
 }
 
@@ -233,21 +241,29 @@
     margin-bottom: 30px;
     display: none;
 
+    @media (min-width: $tablet) {
+        display: block;
+        font-size: 35px;
+    }
+
     @media (min-width: $desktop1) {
         display: block;
+        font-size: 40px;
     }
 }
 
 .courses__text {
     margin-bottom: 20px;
-    grid-area: b;
+
+    @media (min-width: $tablet) {
+        grid-area: b;
+    }
 
     @media (min-width: $laptop) {
         font-size: 21px;
-        margin-bottom: 0;
     }
 
-    @media (min-width: $desktop1) {
+    @media (min-width: $desktop2) {
         font-size: 26px;
     }
 }
@@ -280,17 +296,31 @@
 }
 
 .courses__advantages {
-    grid-area: c;
+    padding-left: 15px;
+
+    @media (min-width: $tablet) {
+        grid-area: c;
+    }
 }
 
 .advantages__item {
     margin-bottom: 10px;
+    font-size: 15px;
 
-    @media (min-width: $laptop) {
-        font-size: 21px;
+    &:before {
+        content: "\2022";
+        color: $orange; 
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
     }
 
-    @media (min-width: $desktop1) {
-        font-size: 26px;
+    @media (min-width: $laptop) {
+        font-size: 19px;
+    }
+
+    @media (min-width: $desktop2) {
+        font-size: 24px;
     }
 }

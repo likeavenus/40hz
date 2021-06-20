@@ -67,13 +67,23 @@ export default function Courses() {
             const thisCourse = coursesInfo.find(item => item.name === thisCourseData);
             courseElement.innerHTML = '';
             coursesAdv.innerHTML = '';
+            coursesTitle.innerHTML = '';
 
             for (let child of this.children) {
                 courseElement.appendChild(child.cloneNode(true));
             }
 
-            coursesTitle.innerText = thisCourse.title;
-            coursesText.innerText = thisCourse.text;
+            const titleText = thisCourse.title.split(' ');
+
+            if (titleText[1]) {
+                coursesTitle.insertAdjacentHTML('afterbegin', `<span class="text__backlight">${thisCourse.title.split(' ')[0]}</span> ${thisCourse.title.split(' ')[1]}`);
+            } else {
+                coursesTitle.insertAdjacentHTML('afterbegin', `<span class="text__backlight">${titleText}</span>`);
+            }
+
+            
+            // coursesText.innerText = thisCourse.text;
+            coursesText.insertAdjacentHTML('afterbegin', thisCourse.text);
 
             thisCourse.listItems.forEach(item => {
                 coursesAdv.insertAdjacentHTML('afterbegin', `<li class="advantages__item">${item}</li>`);
