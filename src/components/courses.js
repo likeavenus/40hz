@@ -27,6 +27,7 @@ export default function Courses() {
             courseElement.innerHTML = '';
             coursesAdv.innerHTML = '';
             coursesTitle.innerHTML = '';
+            coursesText.innerHTML = '';
 
             for (let child of this.children) {
                 courseElement.appendChild(child.cloneNode(true));
