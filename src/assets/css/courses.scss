@@ -181,12 +181,7 @@
     overflow: auto;
 
     @media (min-width: $tablet) {
-        // width: 700px;
         margin: 0 auto;
-    }
-
-    @media (min-width: $laptop) {
-        // width: 1120px;
     }
 }
 
@@ -228,7 +223,6 @@
     animation: curtain 1s ease 0s 1 forwards;        
 }
 .courses__popup-wrap {
-    // width: 280px;
     margin: 0 auto;
     display: none;
 

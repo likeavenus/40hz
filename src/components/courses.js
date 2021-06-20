@@ -82,7 +82,6 @@ export default function Courses() {
             }
 
             
-            // coursesText.innerText = thisCourse.text;
             coursesText.insertAdjacentHTML('afterbegin', thisCourse.text);
 
             thisCourse.listItems.forEach(item => {
