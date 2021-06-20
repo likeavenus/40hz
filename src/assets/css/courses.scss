@@ -87,6 +87,38 @@
     }
 }
 
+.courses__popup-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(134, 134, 134, 0.5);
+    border-radius: 10px;
+    width: 260px;
+    height: 260px;
+    background: $black;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    margin-bottom: 30px;
+
+    & svg {
+        width: 100px;
+        margin-bottom: 26px;
+        position: relative;
+        z-index: 10;
+    }
+
+    @media (min-width: $tablet) {
+        grid-area: a;
+    }
+
+    @media (min-width: $desktop2) {
+        width: 350px;
+        height: 350px;
+    }
+}
+
 .courses__info {
     color: $orange;
     text-align: center;
@@ -120,6 +152,20 @@
     }
 }
 
+.curtain {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-105%);
+    background: $black;
+    transition: all .5s ease;
+    box-shadow: 1px 0 30px rgba(235, 234, 234, .3);
+}
 
 .courses__popup {
     pointer-events: none;
@@ -131,51 +177,52 @@
     bottom: 0;
     right: 0;
     z-index: -100;
-    overflow: hidden;
     display: none;
+    overflow: auto;
 
-    & .curtain {
-        content: '';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        transform: translateX(-105%);
-        background: $black;
-        transition: all .5s ease;
-        box-shadow: 1px 0 30px rgba(235, 234, 234, .3);
+    @media (min-width: $tablet) {
+        margin: 0 auto;
     }
 }
 
 .courses__popup-box {
     width: 100%;
-    height: 100%;
     padding-top: 30px;
     opacity: 0;
-    background-color: #000;
 
     &.active {
         opacity: 1;
     }
+
+    @media (min-width: $tablet) {
+        width: 700px;
+        margin: 0 auto;
+    }
+
+    @media (min-width: $laptop) {
+        width: 1120px;
+    }
 }
 
 .courses__back {
+    display: none;
+    margin: 0 auto;
+
+    @media (min-width: $tablet) {
+        margin: 0 auto;
+    }
 }
 
 .courses__popup.active {
     z-index: 100;
     pointer-events: auto;
     display: block;
-
-    & .curtain {
-        animation: curtain 1s ease 0s 1 forwards;        
-    }
 }
 
+.courses__popup.active + .curtain {
+    animation: curtain 1s ease 0s 1 forwards;        
+}
 .courses__popup-wrap {
-    width: 280px;
     margin: 0 auto;
     display: none;
 
@@ -186,10 +233,33 @@
 
 .courses__popup-title {
     margin-bottom: 30px;
+    display: none;
+
+    @media (min-width: $tablet) {
+        display: block;
+        font-size: 35px;
+    }
+
+    @media (min-width: $desktop1) {
+        display: block;
+        font-size: 40px;
+    }
 }
 
 .courses__text {
     margin-bottom: 20px;
+
+    @media (min-width: $tablet) {
+        grid-area: b;
+    }
+
+    @media (min-width: $laptop) {
+        font-size: 21px;
+    }
+
+    @media (min-width: $desktop2) {
+        font-size: 26px;
+    }
 }
 
 @keyframes curtain {
@@ -199,5 +269,52 @@
 
     100% {
         transform: translateX(-105%);
+    }
+}
+
+.courses__popup-grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 280px;
+
+    @media (min-width: $tablet) {
+        grid-template-columns: 280px 1fr;
+        grid-template-areas: 
+            "a b"
+            "a c";
+    }
+
+    @media (min-width: $laptop) {
+        grid-template-columns: 280px 1fr;
+    }
+}
+
+.courses__advantages {
+    padding-left: 15px;
+
+    @media (min-width: $tablet) {
+        grid-area: c;
+    }
+}
+
+.advantages__item {
+    margin-bottom: 10px;
+    font-size: 15px;
+
+    &:before {
+        content: "\2022";
+        color: $orange; 
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+
+    @media (min-width: $laptop) {
+        font-size: 19px;
+    }
+
+    @media (min-width: $desktop2) {
+        font-size: 24px;
     }
 }

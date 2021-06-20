@@ -499,20 +499,24 @@
 
         </footer>
     </main>
-
     <div class="courses__popup">
-        <div class="curtain"></div>
-        <div class="courses__popup-box">
-            <div class="courses__popup-wrap">
-                <h2 class="courses__popup-title"></h2>
+        <div class="courses__popup-box"></div>
+        <button class="button courses__back">Записаться</button>
+    </div>
+    <div class="curtain"></div>
+
+    <template class="course__temp">
+        <div class="courses__popup-wrap">
+            <h2 class="courses__popup-title"></h2>
+            <div class="courses__popup-grid">
+                <div class="courses__popup-item js-course-item"></div>
                 <p class="courses__text"></p>
-                <p class="courses__cost"></p>
                 <ul class="courses__advantages">
                 </ul>
-                <button class="courses__back">Назад</button>
             </div>
         </div>
-    </div>
+        </div>
+    </template>
 
     <div class="popup js-popup">
         <button class="button__close"></button>
