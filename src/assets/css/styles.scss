@@ -88,7 +88,6 @@ p {
 
 .main {
     width: 100%;
-    transition: all .19s ease;
     position: relative;
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;
@@ -100,6 +99,7 @@ p {
     transform: translateZ(0);
 
     &.main--blured {
+        transition: all .19s ease;
         filter: blur(5px);
     }
 

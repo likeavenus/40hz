@@ -3,14 +3,17 @@ export default function Welcome () {
     const mainElem = document.querySelector('.main');
     const popupElem = document.querySelector('.js-popup');
     const closeButtonElem = document.querySelector('.button__close');
+    const header = document.querySelector('.header');
 
     buttonPopupElem.addEventListener('click', () => {
         mainElem.classList.add('main--blured');
         popupElem.classList.add('popup--active');
+        header.classList.add('header--hidden');
     });
 
     closeButtonElem.addEventListener('click', () => {
         mainElem.classList.remove('main--blured');
         popupElem.classList.remove('popup--active');
+        header.classList.remove('header--hidden');
     });
 }

@@ -21,6 +21,7 @@ export default function Header() {
       main.classList.add('main--blured');
       main.style.position = 'relative';
       main.style.overflow = 'auto';
+      header.classList.add('header--hidden');
    });
 
    window.addEventListener('scroll', () => {
@@ -35,4 +36,5 @@ export default function Header() {
 
 /** TODO
  * Добавить class active к пунктам меню при скроле и нажатии
+ * update: используй intersection observer api
  */

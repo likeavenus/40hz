@@ -35,10 +35,12 @@ export default function Courses() {
 
             const titleText = thisCourse.title.split(' ');
 
-            if (titleText[1]) {
-                coursesTitle.insertAdjacentHTML('afterbegin', `<span class="text__backlight">${thisCourse.title.split(' ')[0]}</span> ${thisCourse.title.split(' ')[1]}`);
+            if (titleText.length === 2) {
+                coursesTitle.insertAdjacentHTML('afterbegin', `<span class="text__backlight">${titleText[0]}</span> ${titleText[1]}`);
+            } else if (titleText.length > 2) {
+                coursesTitle.insertAdjacentHTML('afterbegin', `<span class="text__backlight">${titleText[0]}</span> ${titleText[1]} ${titleText[2]}`);
             } else {
-                coursesTitle.insertAdjacentHTML('afterbegin', `<span class="text__backlight">${titleText}</span>`);
+                coursesTitle.insertAdjacentHTML('afterbegin', `<span class="text__backlight">${titleText.join(' ')}</span>`);
             }
 
             

@@ -22,6 +22,11 @@
          padding: 12px 15px;
       }
    }
+
+   &--hidden {
+      opacity: 0;
+      pointer-events: none;
+   }
 }
 
 .header.scrolled{
