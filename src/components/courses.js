@@ -47,19 +47,24 @@ export default function Courses() {
             thisCourse.listItems.forEach(item => {
                 coursesAdv.insertAdjacentHTML('afterbegin', `<li class="advantages__item">${item}</li>`);
             });
+            coursesBox.append(popupContent);
 
             coursesPopup.classList.add('active');
+            curtain.className += ' animate';
 
             /** сохраняем текущий скролл  */
             pageYOffset = window.pageYOffset;
             
             setTimeout(() => {
-                main.style.display = 'none';
+                main.classList.add('main--hidden');
                 coursesBackBtn.style.display = 'block';
-                coursesBox.append(popupContent);
                 coursesInfoWrap.classList.add('active');
                 coursesBox.classList.add('active');
             }, 500);
+
+            setTimeout(() => {
+                curtain.classList.remove('animate');
+            }, 1000);
         });
 
         

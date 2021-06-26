@@ -161,7 +161,8 @@
     left: 0;
     top: 0;
     bottom: 0;
-    transform: translateX(-105%);
+    transform: translate(-105%);
+    will-change: transform;
     background: $black;
     transition: all .5s ease;
     box-shadow: 1px 0 30px rgba(235, 234, 234, .3);
@@ -188,7 +189,7 @@
 
 .courses__popup-box {
     width: 100%;
-    padding-top: 30px;
+    padding-top: 80px;
     opacity: 0;
 
     &.active {
@@ -202,12 +203,13 @@
 
     @media (min-width: $laptop) {
         width: 1120px;
+        padding-top: 110px;
     }
 }
 
 .courses__back {
     display: none;
-    margin: 0 auto;
+    margin: 0 auto 40px;
 
     @media (min-width: $tablet) {
         margin: 0 auto;
@@ -220,9 +222,11 @@
     display: block;
 }
 
-.courses__popup.active + .curtain {
-    animation: curtain 1s ease 0s 1 forwards;        
+
+.curtain.animate  {
+    animation: curtain 1s ease 0s 1 forwards;   
 }
+
 .courses__popup-wrap {
     margin: 0 auto;
     display: none;
@@ -265,20 +269,23 @@
 
 @keyframes curtain {
     50% {
-        transform: translateX(0);
+        transform: translate(0);
     }
 
     100% {
-        transform: translateX(-105%);
+        transform: translate(-105%);
     }
 }
 
 .courses__popup-grid {
     display: grid;
     justify-content: center;
+    place-items: center;
+
     grid-template-columns: 280px;
 
     @media (min-width: $tablet) {
+        place-items: normal;
         grid-template-columns: 280px 1fr;
         grid-template-areas: 
             "a b"

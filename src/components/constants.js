@@ -57,18 +57,17 @@ export const coursesInfo = [
 ];
 
 export const closeCoursesPopup = (curtain, coursesInfoWrap, coursesBox, coursesPopup, main, pageYOffset, coursesBackBtn) => {
-    curtain.style.animation = 'none';
-    curtain.offsetHeight;
-    curtain.style.animation = null; 
+    curtain.className += ' animate';
     setTimeout(() => {
         coursesBackBtn.style.display = 'none';
         coursesInfoWrap.classList.remove('active');
         coursesBox.classList.remove('active');
-        main.style.display = 'block';
+        main.classList.remove('main--hidden');
         window.scrollTo(0, pageYOffset);
     }, 500);
 
     setTimeout(() => {
         coursesPopup.classList.remove('active');
+        curtain.classList.remove('animate');
     }, 1000);
 };

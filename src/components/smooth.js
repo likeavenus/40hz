@@ -1,4 +1,6 @@
+import smoothscroll from 'smoothscroll-polyfill';
 export default function Smooth() {
+   smoothscroll.polyfill();
    const navbar = document.querySelectorAll('.navbar-nav a');
    const menuBtn = document.querySelector('.header__menu-btn');
    const menu = document.querySelector('.header__menu');

@@ -102,6 +102,13 @@ p {
     &.main--blured {
         filter: blur(5px);
     }
+
+    &.main--hidden {
+        height: 100vh;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 
 .button__close {
@@ -127,4 +134,8 @@ p {
 .text__backlight {
     color: $orange;
     font-weight: bold;
+}
+
+.social__networks-link {
+    display: inline-block;
 }
