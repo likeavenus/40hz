@@ -109,6 +109,11 @@ p {
         opacity: 0;
         pointer-events: none;
     }
+    
+    &.main--cropped {
+        overflow: hidden;
+        height: 100vh;
+    }
 }
 
 .button__close {

@@ -14,6 +14,7 @@ export default function Courses() {
     const coursesAdv = popupContent.querySelector('.courses__advantages');
     const coursesBox = document.querySelector('.courses__popup-box');
     const main = document.querySelector('.main');
+    const header = document.querySelector('.header');
 
     /** создаем переменную для хранения текущего скролла,
      *  для того что бы можно было навесить на main diplay: none;
@@ -59,6 +60,7 @@ export default function Courses() {
             
             setTimeout(() => {
                 main.classList.add('main--hidden');
+                header.classList.add('header--hidden');
                 coursesBackBtn.style.display = 'block';
                 coursesInfoWrap.classList.add('active');
                 coursesBox.classList.add('active');
@@ -81,6 +83,7 @@ export default function Courses() {
         main,
         pageYOffset,
         coursesBackBtn,
+        header,
         )
     );
 }

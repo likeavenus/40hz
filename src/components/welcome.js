@@ -9,13 +9,13 @@ export default function Welcome () {
     const submitBtn = document.querySelector('.send__about');
 
     buttonPopupElem.addEventListener('click', () => {
-        mainElem.classList.add('main--blured');
+        mainElem.classList.add('main--blured', 'main--cropped');
         popupElem.classList.add('popup--active');
         header.classList.add('header--hidden');
     });
 
     closeButtonElem.addEventListener('click', () => {
-        mainElem.classList.remove('main--blured');
+        mainElem.classList.remove('main--blured', 'main--cropped');
         popupElem.classList.remove('popup--active');
         header.classList.remove('header--hidden');
     });
