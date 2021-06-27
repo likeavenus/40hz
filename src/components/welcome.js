@@ -4,6 +4,9 @@ export default function Welcome () {
     const popupElem = document.querySelector('.js-popup');
     const closeButtonElem = document.querySelector('.button__close');
     const header = document.querySelector('.header');
+    const btnAbout = document.querySelector('.btn__about');
+    const popupAboutList = document.querySelector('.popup__about');
+    const submitBtn = document.querySelector('.send__about');
 
     buttonPopupElem.addEventListener('click', () => {
         mainElem.classList.add('main--blured');
@@ -16,4 +19,13 @@ export default function Welcome () {
         popupElem.classList.remove('popup--active');
         header.classList.remove('header--hidden');
     });
+
+    btnAbout.addEventListener('click', () => {
+        btnAbout.classList.toggle('active');
+        popupAboutList.classList.toggle('active');
+    });
+
+    submitBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+    })
 }

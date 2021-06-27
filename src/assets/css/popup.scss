@@ -19,10 +19,129 @@
         opacity: 1;
         z-index: 1100;
     }
+
+    @media (min-width: $laptop) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .popup__title {
     font-size: 18px;
     font-weight: normal;
     text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+
+    @media (min-width: $laptop) {
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
+}
+
+.btn__about {
+    background: transparent;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    margin: 0 auto 20px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 12px;
+        background: url('../img/popup/arrow.svg') no-repeat center;
+        background-size: cover;
+        margin-left: 5px;
+        transition: all .2s ease;
+    }
+
+    &.active {
+        &:after {
+            transform: rotate(180deg);
+        }
+    }
+
+    @media (min-width: $laptop) {
+        display: none;
+    }
+}
+
+.popup__about {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+
+    @media (min-width: $laptop) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    &.active {
+        display: flex;
+    }
+}
+
+.about__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 210px;
+}
+
+.about__text {
+    text-align: center;
+    font-size: 15px;
+}
+
+.about__img {
+    margin-bottom: 15px;
+    width: 70px;
+}
+
+.form-box {
+    width: 260px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    
+    @media (min-width: $laptop) {
+        flex-direction: row;
+        justify-content: center;
+        width: auto;
+        margin-bottom: 20px;
+    }
+}
+
+.about__input {
+    margin-bottom: 10px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+
+    &::placeholder {
+        color: #fff;
+    }
+
+    @media (min-width: $laptop) {
+        margin: 0 20px;
+    }
+}
+
+.send__about {
+    background: transparent;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    color: #fff;
 }
