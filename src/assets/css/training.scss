@@ -2,9 +2,11 @@
 
 .training {
     padding: 40px 0;
+    margin-bottom: 70px;
 
     @media (min-width: $laptop) {
         padding: 150px 0;
+        margin-bottom: 0;
     }
 }
 

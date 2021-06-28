@@ -1,6 +1,11 @@
 .teachers {
-
+    margin-bottom: 80px;
+    
+    @media (min-width: $desktop1) {
+        margin-bottom: 100px;
+    }
 }
+
 .teachers__title {
     margin-bottom: 40px;
 }

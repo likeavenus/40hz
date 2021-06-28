@@ -18,7 +18,7 @@ export default function Header() {
       menuBtn.classList.remove('active');
       menu.classList.remove('active');
       popup.classList.add('popup--active');
-      main.classList.add('main--blured');
+      main.classList.add('main--blured', 'main--cropped');
       main.style.position = 'relative';
       main.style.overflow = 'auto';
       header.classList.add('header--hidden');
