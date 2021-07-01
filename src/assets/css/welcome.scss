@@ -3,12 +3,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('../img//welcome/welcome_bg.jpg');
-    background-position: center center;
+    // background-image: url('../img//welcome/welcome_bg.jpg');
+    // background-position: center center;
+    background: rgba(0, 0, 0, .4);
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    z-index: 10;
+}
+
+.video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    object-fit: cover;
+    z-index: 0;
+    height: 100vh;
+    width: 100%;
 }
 
 .welcome__title-box {
@@ -18,11 +31,15 @@
     justify-content: center;
     text-align: center;
     margin-bottom: 40px;
+
+    @media (min-width: $laptop) {
+        margin-bottom: 0;
+    }
 }
 
 .welcome__title {
     font-size: 100px;
-    margin-bottom: 20px;
+    line-height: 80px;
 
     & span {
         font-size: 60px;
@@ -30,6 +47,7 @@
 
     @media (min-width: $laptop) {
         font-size: 150px;
+        line-height: 120px;
 
         & span {
             font-size: 80px;
@@ -39,6 +57,10 @@
 
 .welcome__subtitle {
     margin-bottom: 20px;
+
+    @media (min-width: $laptop) {
+        font-size: 35px;
+    }
 }
 
 .social_networks {

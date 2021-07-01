@@ -17,6 +17,7 @@
     "@babel/polyfill": "^7.8.7",
     "normalize.css": "^8.0.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "plyr": "^3.6.8",
     "smoothscroll-polyfill": "^0.4.4",
     "swiper": "^6.7.0",
     "webpack": "^4.43.0",

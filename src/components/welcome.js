@@ -1,3 +1,5 @@
+import Plyr from 'plyr';
+
 export default function Welcome () {
     const buttonPopupElem = document.querySelector('.js-open-popup');
     const mainElem = document.querySelector('.main');
@@ -28,4 +30,14 @@ export default function Welcome () {
     submitBtn.addEventListener('click', (e) => {
         e.preventDefault();
     })
+
+
+    const player = new Plyr('#player', {
+        controls: [],
+        autoplay: true,
+        muted: true,
+        loop: {
+            active: true,
+        }
+    });
 }
