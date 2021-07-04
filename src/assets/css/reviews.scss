@@ -2,6 +2,9 @@
 
 .reviews {
     margin-bottom: 100px;
+    @media (min-width: $laptop) {
+        margin-bottom: 250px;
+    }
 }
 
 .swiper-container {
@@ -81,7 +84,6 @@
     }
 }
 
-
 .swiper-button-prev,
 .swiper-button-next {
     top: 23%;
@@ -92,13 +94,12 @@
     }
 }
 
-
 .swiper-pagination {
     bottom: 0;
-    
+
     & .swiper-pagination-bullet {
         background-color: $orange;
-        transition: all .55s ease;
+        transition: all 0.55s ease;
         margin: 0 5px;
         width: 8px;
         height: 8px;
@@ -118,7 +119,7 @@
             width: 45px;
         }
     }
-} 
+}
 
 .slide__link {
     width: 40px;
@@ -126,7 +127,7 @@
 
     & img {
         width: 100%;
-        transition: all .2s ease;
+        transition: all 0.2s ease;
     }
 
     &:hover {

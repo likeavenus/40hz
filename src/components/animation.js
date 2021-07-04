@@ -9,7 +9,7 @@ export default function Animation() {
 
             const animItem = animItems[i];
             const animItemHeight = animItem.offsetHeight;
-            const animItemOffset = offset(animItem).top;
+            const animItemOffsetTop = offset(animItem).top;
             const animStart = 4;
 
             let animItemPiont = window.innerHeight - animItemHeight / animStart;
@@ -18,18 +18,21 @@ export default function Animation() {
                animItemPiont = window.innerHeight - window.innerHeight / animStart;
             }
 
-            if ((pageYOffset > animItemOffset - animItemPiont) && pageYOffset < (animItemOffset + animItemHeight)) {
+            if ((pageYOffset > animItemOffsetTop - animItemPiont) && pageYOffset < (animItemOffsetTop + animItemHeight)) {
                animItem.classList.add('visible');
             } else {
-               animItem.classList.remove('visible');
+               if (animItem.classList.contains('anim-hide')) {
+                  animItem.classList.remove('visible');
+               }
             }
          }
       }
 
       function offset(el) {
          const rect = el.getBoundingClientRect(),
-            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-         return { top: rect.top + scrollTop }
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop,
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+         return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
       }
 
       setTimeout(() => {

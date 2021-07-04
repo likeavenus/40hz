@@ -33,6 +33,14 @@ h1 {
     font-size: 24px;
     font-weight: bold;
     font-family: $rubikReg;
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+
+    &.visible {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
 
     @media (min-width: $tablet) {
         font-size: 40px;
@@ -45,10 +53,12 @@ h1 {
 
 h2 {
     text-align: center;
-    
 }
 
-h1,h2,h3,h4 {
+h1,
+h2,
+h3,
+h4 {
     margin: 0;
 }
 
@@ -60,7 +70,7 @@ h1,h2,h3,h4 {
     padding: 12px 17.5px;
     font-size: 18px;
     cursor: pointer;
-    transition: all .19s ease;
+    transition: all 0.19s ease;
 
     &:hover {
         background-color: $orangeHover;
@@ -92,15 +102,15 @@ p {
     position: relative;
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;
-    -webkit-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0, 0, 0);
     -webkit-transform: translateZ(0);
     backface-visibility: hidden;
     perspective: 1000;
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
     transform: translateZ(0);
 
     &.main--blured {
-        transition: all .19s ease;
+        transition: all 0.19s ease;
         filter: blur(5px);
     }
 
@@ -110,7 +120,7 @@ p {
         opacity: 0;
         pointer-events: none;
     }
-    
+
     &.main--cropped {
         overflow: hidden;
         height: 100vh;
@@ -120,7 +130,7 @@ p {
 .button__close {
     width: 20px;
     height: 20px;
-    background-image: url('../img/close.svg');
+    background-image: url("../img/close.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -147,14 +157,14 @@ p {
 }
 
 ::-webkit-scrollbar {
-    width: .2em;
-  }
-   
-  body::-webkit-scrollbar-track {
+    width: 0.2em;
+}
+
+body::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  }
-   
-  body::-webkit-scrollbar-thumb {
+}
+
+body::-webkit-scrollbar-thumb {
     background-color: darkgrey;
     border-radius: 20px;
-  }
+}

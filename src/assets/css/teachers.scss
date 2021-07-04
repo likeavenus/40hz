@@ -1,6 +1,6 @@
 .teachers {
     margin-bottom: 80px;
-    
+
     @media (min-width: $desktop1) {
         margin-bottom: 100px;
     }
@@ -16,6 +16,14 @@
     width: 280px;
     margin: 0 auto 50px;
     text-align: center;
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0.4s;
+
+    &.visible {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
 
     @media (min-width: $tablet) {
         font-size: 14px;
@@ -33,12 +41,35 @@
     align-items: center;
     justify-content: center;
     margin: auto;
+    & img {
+        transform: translate(0px, 120%);
+        opacity: 0;
+    }
+
+    &.visible {
+        img {
+            @for $var from 1 to 7 {
+                $delay: $var * 0.2;
+                &:nth-child(#{$var}) {
+                    @if $var == 1 {
+                        transition: all 0.8s ease 0.3s;
+                        opacity: 1;
+                        transform: translate(0px, 0px);
+                    } @else {
+                        transition: all 0.8s ease #{$delay + s};
+                        opacity: 1;
+                        transform: translate(0px, 0px);
+                    }
+                }
+            }
+        }
+    }
 
     @media (min-width: $tablet) {
         width: 715px;
         flex-direction: row;
         flex-wrap: wrap;
-        
+
         .gallery__column--last {
             display: flex;
             flex-direction: row;
@@ -57,8 +88,10 @@
     }
 }
 
-.gallery__image{
-    & img{
+.gallery__image {
+    overflow: hidden;
+
+    & img {
         width: 220px;
         margin: 10px;
 
@@ -72,3 +105,10 @@
     }
 }
 
+.gallery__image--scalable {
+    transition: 0.5s;
+}
+
+.gallery__image--scalable:hover {
+    transform: scale(1.2) !important;
+}

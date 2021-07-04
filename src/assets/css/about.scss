@@ -1,11 +1,11 @@
 .about {
-    & .swiper-button-prev{
-        top:45%;
+    & .swiper-button-prev {
+        top: 45%;
     }
-    & .swiper-button-next{
-        top:45%;
+    & .swiper-button-next {
+        top: 45%;
     }
-    & .slider__slide{
+    & .slider__slide {
         padding: 0;
         border: none;
         grid-template-columns: auto;
@@ -13,31 +13,42 @@
 }
 
 .about__title {
-   margin: 60px 0 40px 0;
+    margin: 60px 0 40px 0;
 }
 
 .about__subtitle {
-   font-weight: normal;
-   font-size: 15px;
-   width: 280px;
-   margin: 0 auto 50px;
-   text-align: center;
+    font-weight: normal;
+    font-size: 15px;
+    width: 280px;
+    margin: 0 auto 50px;
+    text-align: center;
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0.4s;
 
-   @media (min-width: $tablet) {
-       font-size: 14px;
-       width: 715px;
-   }
-   @media (min-width: $laptop) {
-       font-size: 21px;
-       width: 1280px;
-   }
+    &.visible {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+
+    @media (min-width: $tablet) {
+        font-size: 14px;
+        width: 715px;
+    }
+    @media (min-width: $laptop) {
+        font-size: 21px;
+        width: 1280px;
+    }
 }
 
 .slide {
-    width: 200px;
+    width: 220px;
     position: relative;
     @media (min-width: $tablet) {
         width: 580px;
+    }
+    @media (min-width: $tabletM) {
+        width: 750px;
     }
     @media (min-width: $desktop1) {
         width: 1150px;
@@ -45,11 +56,14 @@
 }
 
 .slide__img {
-    width: 200px;
+    width: 220px;
     margin-bottom: 10px;
-    
+
     @media (min-width: $tablet) {
         width: 580px;
+    }
+    @media (min-width: $tabletM) {
+        width: 750px;
     }
     @media (min-width: $desktop1) {
         width: 1150px;
@@ -58,7 +72,8 @@
 
 .slide__text {
     text-align: center;
-    
+    font-size: 1.2rem;
+
     @media (min-width: $tablet) {
         position: absolute;
         bottom: 30px;
@@ -71,6 +86,5 @@
 }
 
 .swiper__buttons {
-    top:45%;
+    top: 45%;
 }
-

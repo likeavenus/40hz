@@ -5,7 +5,7 @@
     margin-bottom: 70px;
 
     @media (min-width: $laptop) {
-        padding: 150px 0;
+        padding: 150px 0 250px;
         margin-bottom: 0;
     }
 }
@@ -16,6 +16,30 @@
     grid-row-gap: 50px;
     justify-content: center;
     margin-bottom: 50px;
+
+    & li {
+        transform: translate(0px, 120%);
+        opacity: 0;
+    }
+
+    &.visible {
+        li {
+            @for $var from 1 to 7 {
+                $delay: $var * 0.2;
+                &:nth-child(#{$var}) {
+                    @if $var == 1 {
+                        transition: all 0.8s ease 0.3s;
+                        opacity: 1;
+                        transform: translate(0px, 0px);
+                    } @else {
+                        transition: all 0.8s ease #{$delay + s};
+                        opacity: 1;
+                        transform: translate(0px, 0px);
+                    }
+                }
+            }
+        }
+    }
 
     @media (min-width: $tablet) {
         grid-template-columns: repeat(2, 280px);
@@ -104,6 +128,14 @@
     font-size: 14px;
     text-align: center;
     padding: 0 20px;
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0.4s;
+
+    &.visible {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
 
     @media (min-width: $laptop) {
         font-size: 21px;

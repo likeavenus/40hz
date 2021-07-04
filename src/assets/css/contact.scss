@@ -8,18 +8,26 @@
    width: 280px;
    margin: 0 auto 50px;
    text-align: center;
+   transform: translate(0px, 120%);
+   opacity: 0;
+   transition: all 0.8s ease 0.4s;
+
+   &.visible {
+      transform: translate(0px, 0px);
+      opacity: 1;
+   }
 
    @media (min-width: $tablet) {
-       font-size: 14px;
-       width: 715px;
+      font-size: 14px;
+      width: 715px;
    }
    @media (min-width: $laptop) {
-       font-size: 21px;
-       width: 1280px;
+      font-size: 21px;
+      width: 1280px;
    }
 }
 
-.contact__row{
+.contact__row {
    display: flex;
    flex-direction: column-reverse;
    width: 80%;
@@ -28,18 +36,19 @@
    @media (min-width: $tablet) {
       width: 100%;
       flex-direction: row;
-  }
-}
-
-.contact__form{
-   display: flex;
-   flex-direction: column;
-   @media (min-width: $tablet) {
-      width: 50%;  
    }
 }
 
-.form__input{
+.contact__form {
+   display: flex;
+   flex-direction: column;
+
+   @media (min-width: $tablet) {
+      width: 50%;
+   }
+}
+
+.form__input {
    @media (min-width: $desktop1) {
       display: flex;
       flex-direction: row;
@@ -48,12 +57,12 @@
       margin-right: 0;
       max-width: 565px;
    }
-   
 }
 
-.contact__input{
+.contact__input {
    display: flex;
    flex-direction: column;
+
    @media (min-width: $tablet) {
       width: 80%;
       margin-left: auto;
@@ -64,10 +73,23 @@
    }
 }
 
-.contact__info{
+.contact__info {
    margin-bottom: 10px;
+
+   & a {
+      color: white;
+   }
+
    & p {
       margin-bottom: 10px;
+      transform: translate(0px, 120%);
+      opacity: 0;
+      transition: all 0.8s ease 0.4s;
+
+      &.visible {
+         transform: translate(0px, 0px);
+         opacity: 1;
+      }
    }
    @media (min-width: $tablet) {
       margin: 25px 0 0 25px;
@@ -79,15 +101,35 @@
    border: #fff solid 1px;
    color: #fff;
    height: 30px;
-   margin-bottom: 10px; 
+   margin-bottom: 10px;
 }
 
-.form__textarea{
+.contact__input {
+   transform: translate(0px, 120%);
+   opacity: 0;
+   transition: all 0.8s ease 0s;
+
+   &.visible {
+      transform: translate(0px, 0px);
+      opacity: 1;
+   }
+}
+
+.form__textarea {
+   transform: translate(0px, 50%);
+   opacity: 0;
+   transition: all 0.8s ease 0s;
+
+   &.visible {
+      transform: translate(0px, 0px);
+      opacity: 1;
+   }
+
    @media (min-width: $tablet) {
       width: 80%;
       margin-left: auto;
       margin-right: 0;
-  }
+   }
    @media (min-width: $desktop1) {
       width: 79%;
       max-width: 560px;
@@ -95,12 +137,12 @@
       margin-right: 0;
    }
 }
-.textarea__field{
+.textarea__field {
    width: 98%;
    background-color: transparent;
    border: #fff solid 1px;
    color: #fff;
-   margin-bottom: 10px; 
+   margin-bottom: 10px;
    resize: none;
 
    @media (min-width: $tablet) {
@@ -118,6 +160,15 @@
    color: #fff;
    margin-left: auto;
    margin-right: 0;
+   transform: translate(0px, 50%);
+   opacity: 0;
+   transition: all 0.8s ease 0s;
+
+   &.visible {
+      transform: translate(0px, 0px);
+      opacity: 1;
+   }
+
    @media (min-width: $tablet) {
       margin-left: auto;
       margin-right: 0;

@@ -1,11 +1,11 @@
-.footer__row{
+.footer__row {
    display: flex;
    justify-content: center;
    width: 100%;
    flex-wrap: wrap;
    margin-bottom: 20px;
-   
-   @media (min-width: $desktop1){
+
+   @media (min-width: $desktop1) {
       justify-content: space-between;
       width: 70%;
       margin: auto;
@@ -13,45 +13,94 @@
    }
 }
 
-.footer__logo{
+.footer__logo {
    width: 50px;
    margin-right: 10px;
+   transform: translate(0px, 50%);
+   opacity: 0;
+   transition: all 0.8s ease 0s;
 
-   @media (min-width: $tablet){
+   &.visible {
+      transform: translate(0px, 0px);
+      opacity: 1;
+   }
+
+   @media (min-width: $tablet) {
       width: 65px;
    }
-   @media (min-width: $desktop1){
+   @media (min-width: $desktop1) {
       width: 80px;
    }
 }
 
-.footer__school-name{
+.footer__school-name {
    margin: auto 0;
    text-transform: uppercase;
+   transform: translate(0px, 50%);
+   opacity: 0;
+   transition: all 0.8s ease 0.2s;
+
+   &.visible {
+      transform: translate(0px, 0px);
+      opacity: 1;
+   }
 }
 
-.footer__description{
+.footer__description {
    margin-top: 10px;
    text-align: center;
+   transform: translate(0px, 50%);
+   opacity: 0;
+   transition: all 0.8s ease 0.4s;
 
-   @media (min-width: $tablet){
+   &.visible {
+      transform: translate(0px, 0px);
+      opacity: 1;
+   }
+
+   @media (min-width: $tablet) {
       margin: auto 20px;
       font-size: 14px;
    }
-   @media (min-width: $desktop1){
+   @media (min-width: $desktop1) {
       margin: auto 20px;
       font-size: 21px;
    }
 }
 
-.social__networks--footer{
+.social__networks--footer {
    position: relative;
    left: 0;
    bottom: 0;
+
+   & a {
+      transform: translate(0px, 50%);
+      opacity: 0;
+      transition: all 0.8s ease 0.6s;
+
+      &:nth-child(1).visible {
+         transform: translate(0px, 0px);
+         opacity: 1;
+         transition: all 0.8s ease 0.6s;
+      }
+      &:nth-child(2).visible {
+         transform: translate(0px, 0px);
+         opacity: 1;
+         transition: all 0.8s ease 0.8s;
+      }
+      &:nth-child(3).visible {
+         transform: translate(0px, 0px);
+         opacity: 1;
+         transition: all 0.8s ease 1s;
+      }
+   }
 }
 
 .logo__img {
    stroke: #fff;
    stroke-miterlimit: 22.9256;
    stroke-width: 0.5669px;
- }
+}
+
+.social_networks {
+}
