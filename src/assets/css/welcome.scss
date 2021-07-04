@@ -53,6 +53,10 @@
             font-size: 80px;
         }
     }
+
+    @media (min-width: $desktop2) {
+        font-size: 170px;
+    }
 }
 
 .welcome__subtitle {
@@ -60,6 +64,10 @@
 
     @media (min-width: $laptop) {
         font-size: 35px;
+    }
+
+    @media (min-width: $desktop2) {
+        font-size: 45px;
     }
 }
 

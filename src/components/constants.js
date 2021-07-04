@@ -79,10 +79,11 @@ export const coursesInfo = [
 ];
 
 
-export const closeCoursesPopup = (curtain, coursesInfoWrap, coursesBox, coursesPopup, main, pageYOffset, coursesBackBtn, header) => {
+export const closeCoursesPopup = (curtain, coursesInfoWrap, coursesBox, coursesPopup, main, pageYOffset, coursesBackBtn, header, coursesCloseBtn) => {
     curtain.className += ' animate';
     setTimeout(() => {
         coursesBackBtn.style.display = 'none';
+        coursesCloseBtn.classList.remove('active');
         coursesInfoWrap.classList.remove('active');
         coursesBox.classList.remove('active');
         main.classList.remove('main--hidden');
