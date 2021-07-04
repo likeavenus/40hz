@@ -1,5 +1,7 @@
 export default function Animation() {
    const animItems = document.querySelectorAll('.anim-items');
+   const animSlides = document.querySelectorAll('.about .swiper-slide');
+
 
    if (animItems.length > 0) {
       window.addEventListener('scroll', animOnScroll);
