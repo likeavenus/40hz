@@ -35,19 +35,50 @@
     @media (min-width: $laptop) {
         margin-bottom: 0;
     }
+
+    & .button {
+        transform: translate(0px, 120%);
+        opacity: 0;
+        transition: all 0.8s ease 0.6s;
+
+        &.visible{
+            transform: translate(0px, 0px);
+            opacity: 1;
+            transition: all 0.8s ease 0.9s;
+        }
+    }
 }
 
 .welcome__title {
-    line-height: 80px;
-    
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+
+    @media (min-width: $tablet) {
+        width: 200px;
+        height: 200px;
+    }
 
     @media (min-width: $laptop) {
-        line-height: 120px;
+        width: 380px;
+        height: 380px;
     }
 }
 
 #logo{
+    width: 150px;
+    height: 150px;
     animation: fill 0.5s ease forwards 1s;
+
+    @media (min-width: $tablet) {
+        width: 200px;
+        height: 200px;
+    }
+
+    @media (min-width: $laptop) {
+        width: 380px;
+        height: 380px;
+    }
     
     & path {
         stroke-dasharray: 1890;
@@ -68,18 +99,56 @@
             fill: white;
         }
     }
+
+    @media (min-width: $desktop2) {
+        font-size: 170px;
+    }
 }
 
 .welcome__subtitle {
     margin-bottom: 20px;
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0.6s;
+
+    &.visible {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
 
     @media (min-width: $laptop) {
         font-size: 35px;
     }
+
+    @media (min-width: $desktop2) {
+        font-size: 45px;
+    }
 }
+
 
 .social_networks {
     display: flex;
+
+    & .anim-items{
+        opacity: 0;
+        transition: all 0.8s ease 1s;
+
+        &:nth-child(1).visible{
+            transform: translate(0px, 0px);
+            opacity: 1;
+            transition: all 0.8s ease 1.2s;
+        }
+        &:nth-child(2).visible{
+            transform: translate(0px, 0px);
+            opacity: 1;
+            transition: all 0.8s ease 1.4s;
+        }
+        &:nth-child(3).visible{
+            transform: translate(0px, 0px);
+            opacity: 1;
+            transition: all 0.8s ease 1.6s;
+        }
+    }
 
     @media (min-width: $laptop) {
         position: absolute;

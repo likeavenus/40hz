@@ -189,7 +189,7 @@
 
 .courses__popup-box {
     width: 100%;
-    padding-top: 30px;
+    padding-top: 45px;
     opacity: 0;
 
     &.active {
@@ -204,6 +204,10 @@
     @media (min-width: $laptop) {
         width: 1120px;
         padding-top: 110px;
+    }
+
+    @media (min-width: $desktop1) {
+        width: 1266px;
     }
 }
 
@@ -295,6 +299,11 @@
     @media (min-width: $laptop) {
         grid-template-columns: 280px 1fr;
     }
+
+    @media (min-width: $desktop2) {
+        grid-template-columns: 350px 1fr;
+        grid-column-gap: 40px;
+    }
 }
 
 .courses__advantages {
@@ -324,5 +333,30 @@
 
     @media (min-width: $desktop2) {
         font-size: 24px;
+    }
+}
+
+.close-courses {
+    width: 20px;
+    height: 20px;
+    z-index: 20;
+    border: none;
+    background-color: transparent;
+    background-image: url('../img/close.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+
+    @media (min-width: $laptop) {
+        top: 60px;
+        right: 70px;
     }
 }

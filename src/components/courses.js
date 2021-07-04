@@ -15,6 +15,7 @@ export default function Courses() {
     const coursesBox = document.querySelector('.courses__popup-box');
     const main = document.querySelector('.main');
     const header = document.querySelector('.header');
+    const coursesCloseBtn = document.querySelector('.close-courses');
 
     /** создаем переменную для хранения текущего скролла,
      *  для того что бы можно было навесить на main diplay: none;
@@ -62,6 +63,7 @@ export default function Courses() {
                 main.classList.add('main--hidden');
                 header.classList.add('header--hidden');
                 coursesBackBtn.style.display = 'block';
+                coursesCloseBtn.classList.add('active');
                 coursesInfoWrap.classList.add('active');
                 coursesBox.classList.add('active');
             }, 500);
@@ -74,16 +76,39 @@ export default function Courses() {
         
     });
 
-    coursesBackBtn.addEventListener('click',
-     () => closeCoursesPopup(
-        curtain,
-        coursesInfoWrap,
-        coursesBox,
-        coursesPopup,
-        main,
-        pageYOffset,
-        coursesBackBtn,
-        header,
-        )
+    coursesCloseBtn.addEventListener('click',
+    () => 
+        closeCoursesPopup(
+            curtain,
+            coursesInfoWrap,
+            coursesBox,
+            coursesPopup,
+            main,
+            pageYOffset,
+            coursesBackBtn,
+            header,
+            coursesCloseBtn,
+       )
     );
+    const popupElem = document.querySelector('.js-popup');
+    coursesBackBtn.addEventListener('click', () => {
+        closeCoursesPopup(
+            curtain,
+            coursesInfoWrap,
+            coursesBox,
+            coursesPopup,
+            main,
+            pageYOffset,
+            coursesBackBtn,
+            header,
+            coursesCloseBtn,
+        );
+
+        setTimeout(() => {
+            main.classList.add('main--blured', 'main--cropped');
+            popupElem.classList.add('popup--active');
+            header.classList.add('header--hidden'); 
+        }, 500)
+
+    });
 }
