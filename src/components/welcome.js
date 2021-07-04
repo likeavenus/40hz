@@ -1,6 +1,6 @@
 import Plyr from 'plyr';
 
-export default function Welcome () {
+export default function Welcome() {
     const buttonPopupElem = document.querySelector('.js-open-popup');
     const mainElem = document.querySelector('.main');
     const popupElem = document.querySelector('.js-popup');
