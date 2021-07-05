@@ -7,7 +7,6 @@ export default function Header() {
    const headerBtn = document.querySelector('.header-btn');
    const popup = document.querySelector('.popup');
 
-   let pageOffset;
 
    menuBtn.addEventListener('click', () => {
       menuBtn.classList.toggle('active');
@@ -31,10 +30,23 @@ export default function Header() {
          header.classList.remove('scrolled');
       }
    });
+
+   (function () {
+      const section = document.querySelectorAll('section');
+      let sections = {};
+
+      Array.prototype.forEach.call(section, function (e) {
+         sections[e.id] = e.offsetTop;
+      });
+
+      window.onscroll = function () {
+         let scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+         for (let i in sections) {
+            if (sections[i] <= scrollPosition + 420) {
+               document.querySelector('.active').setAttribute('class', ' ');
+               document.querySelector('a[href*=' + i + ']').setAttribute('class', 'active');
+            }
+         }
+      };
+   })();
 };
-
-
-/** TODO
- * Добавить class active к пунктам меню при скроле и нажатии
- * update: используй intersection observer api
- */

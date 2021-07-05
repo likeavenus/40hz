@@ -1,4 +1,4 @@
-.header{
+.header {
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -6,15 +6,15 @@
    width: 100%;
    position: fixed;
    z-index: 1000;
-   
-   @media (min-width: $laptop){
+
+   @media (min-width: $laptop) {
       display: flex;
       justify-content: space-between;
    }
 
-   & .header-btn{
+   & .header-btn {
       text-transform: uppercase;
-      
+
       @media (min-width: $laptop) {
          height: 40px;
          font-size: 14px;
@@ -29,13 +29,13 @@
    }
 }
 
-.header.scrolled{
+.header.scrolled {
    background-color: $black;
    transition: all 0.5s ease;
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.header__logo{
+.header__logo {
    width: 50px;
    margin: auto 20px;
    @media (min-width: $laptop) {
@@ -43,7 +43,7 @@
    }
 }
 
-.header__menu-btn{
+.header__menu-btn {
    width: 30px;
    height: 30px;
    position: relative;
@@ -74,21 +74,21 @@
    }
 }
 
-.header__menu-btn.active{
-   & span:first-of-type{
+.header__menu-btn.active {
+   & span:first-of-type {
       width: 0;
    }
-   & span:nth-of-type(2){
+   & span:nth-of-type(2) {
       top: 50%;
       transform: translateY(-50%) rotate(45deg);
    }
-   & span:nth-of-type(3){
+   & span:nth-of-type(3) {
       top: 50%;
       transform: translateY(-50%) rotate(-45deg);
    }
 }
 
-.header__menu{
+.header__menu {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -111,34 +111,38 @@
       text-align: center;
       font-size: 12px;
 
+      & .active {
+         color: $orange;
+         text-decoration: none;
+      }
+
       @media (min-width: $laptop) {
          flex-direction: row;
          align-items: center;
          position: absolute;
          right: 50px;
          font-size: 14px;
-      } 
+      }
 
       & ul {
-         @media (min-width: $laptop){
+         @media (min-width: $laptop) {
             display: flex;
             justify-content: space-between;
          }
       }
-      
    }
 
    & li {
       list-style-type: none;
       margin: 20px;
    }
-   
+
    & li.active {
       text-decoration: none;
       color: $orange;
       font-weight: bold;
       text-transform: uppercase;
-      border-bottom: 1px solid $orange;  
+      border-bottom: 1px solid $orange;
    }
 
    & a {
@@ -152,7 +156,7 @@
       text-decoration: none;
       color: $orange;
       text-transform: uppercase;
-      border-bottom: 1px solid $orange;  
+      border-bottom: 1px solid $orange;
    }
 
    @media (min-width: $laptop) {
@@ -166,7 +170,6 @@
    }
 }
 
-.header__menu.active{
+.header__menu.active {
    transform: rotateX(0);
 }
-

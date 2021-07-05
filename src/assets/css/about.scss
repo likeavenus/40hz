@@ -1,4 +1,10 @@
 .about {
+    padding-bottom: 80px;
+
+    @media (min-width: $desktop1) {
+        padding-bottom: 200px;
+    }
+
     & .swiper-button-prev {
         top: 45%;
     }
