@@ -7,7 +7,6 @@ export default function Header() {
    const headerBtn = document.querySelector('.header-btn');
    const popup = document.querySelector('.popup');
 
-
    menuBtn.addEventListener('click', () => {
       menuBtn.classList.toggle('active');
       menu.classList.toggle('active');

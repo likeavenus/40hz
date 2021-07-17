@@ -123,6 +123,11 @@
     @media (min-width: $desktop2) {
         font-size: 45px;
     }
+
+    &.welcome__subtitle--hidden {
+        transition: all .1s ease;
+        opacity: 0;
+    }
 }
 
 
@@ -161,5 +166,12 @@
     transition: all .2s ease;
     &:hover {
         filter: drop-shadow(2px 2px 2px #fff);
+    }
+}
+
+.welcome .js-open-popup {
+    &.open-popup--hidden {
+        transition: all .1s ease;
+        opacity: 0;
     }
 }

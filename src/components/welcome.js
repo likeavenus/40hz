@@ -9,18 +9,26 @@ export default function Welcome() {
     const btnAbout = document.querySelector('.btn__about');
     const popupAboutList = document.querySelector('.popup__about');
     const submitBtn = document.querySelector('.send__about');
+    const welcomeSubtitle = document.querySelector('.welcome__subtitle');
 
-    buttonPopupElem.addEventListener('click', () => {
-        mainElem.classList.add('main--blured', 'main--cropped');
-        popupElem.classList.add('popup--active');
-        header.classList.add('header--hidden');
-    });
+    const onPopupOpened = (action) => {
+        if (action === 'add') {
+            mainElem.classList.add('main--blured', 'main--cropped');
+            popupElem.classList.add('popup--active');
+            header.classList.add('header--hidden');
+            welcomeSubtitle.classList.add('welcome__subtitle--hidden');
+            buttonPopupElem.classList.add('open-popup--hidden');
+        } else {
+            mainElem.classList.remove('main--blured', 'main--cropped');
+            popupElem.classList.remove('popup--active');
+            header.classList.remove('header--hidden');  
+            welcomeSubtitle.classList.remove('welcome__subtitle--hidden');
+            buttonPopupElem.classList.remove('open-popup--hidden');
+        }
+    }
 
-    closeButtonElem.addEventListener('click', () => {
-        mainElem.classList.remove('main--blured', 'main--cropped');
-        popupElem.classList.remove('popup--active');
-        header.classList.remove('header--hidden');
-    });
+    buttonPopupElem.addEventListener('click', () => onPopupOpened('add'));
+    closeButtonElem.addEventListener('click', () => onPopupOpened('remove'));
 
     btnAbout.addEventListener('click', () => {
         btnAbout.classList.toggle('active');
