@@ -4,6 +4,7 @@ import Slider from './components/slider';
 import Courses from './components/courses';
 import Smooth from './components/smooth';
 import Animation from './components/animation';
+import Form from './components/form';
 
 import './assets/css/styles.scss';
 
@@ -13,3 +14,4 @@ Slider();
 Courses();
 Smooth();
 Animation();
+Form();

@@ -515,31 +515,34 @@
             </div>
         </section>
         <section class="contact" id="contact">
+            <div class="contact__popup">
+                <h3 class="contact__popup-title"></h3>
+            </div>
             <h2 class="title contact__title anim-items">Связь с нами</h2>
             <h3 class="contact__subtitle anim-items">Остались вопросы? Просто заполни форму
                 и мы с Вами
                 свяжемся!
             </h3>
             <div class="contact__row">
-                <div class="contact__form">
+                <form class="contact__form">
                     <div class="form__input">
                         <div class="contact__input anim-items">
                             <label for="contact__name">Имя</label>
-                            <input type="text" class="input__field" id="contact__name">
+                            <input type="text" name="name" required class="input__field" id="contact__name">
                         </div>
                         <div class="contact__input anim-items">
                             <label for="contact__mail">Контакты</label>
-                            <input type="text" class="input__field" id="contact__mail">
+                            <input type="text" name="contacts" required class="input__field" id="contact__mail">
                         </div>
                     </div>
                     <div class="form__textarea anim-items">
                         <label for="contact__message">Сообщение</label>
-                        <textarea name="contact__message " id="contact__message" cols="30" rows="10"
+                        <textarea name="contact__message" required id="contact__message" cols="30" rows="10"
                             class="textarea__field"></textarea>
                     </div>
                     <button type="submit" name="contact__submit" id="contact__submit"
                         class="contact__button anim-items">Отправить</button>
-                </div>
+                </form>
                 <div class="contact__info">
                     <p class="anim-items">E-mail:</br><a href="mailto:40hzscholl@hz.ru">40hzscholl@hz.ru</a></p>
                     <p class="anim-items">Телефон:</br><a href="tel:+79219417055">8 921 941 70 55</a></p>
@@ -632,11 +635,11 @@
 
         <form class="about__form">
             <div class="form-box">
-                <input class="about__input" placeholder="Имя" type="text" id="name">
-                <input class="about__input" placeholder="Телефон" type="text" id="phone">
-                <input class="about__input" placeholder="E-mail" type="text" id="mail">
+                <input class="about__input" name="user" placeholder="Имя" type="text" id="name">
+                <input class="about__input" name="phone" placeholder="Телефон" type="text" id="phone">
+                <input class="about__input" name="mail" placeholder="E-mail" type="text" id="mail">
             </div>
-            <button type="submit" class="button send__about">Записаться</button>
+            <button type="submit" name="request_submit" class="button send__about">Записаться</button>
         </form>
     </div>
 </body>

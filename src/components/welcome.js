@@ -10,6 +10,7 @@ export default function Welcome() {
     const popupAboutList = document.querySelector('.popup__about');
     const submitBtn = document.querySelector('.send__about');
     const welcomeSubtitle = document.querySelector('.welcome__subtitle');
+    const formAbout = document.querySelector('.about__form');
 
     const onPopupOpened = (action) => {
         if (action === 'add') {
@@ -48,4 +49,14 @@ export default function Welcome() {
             active: true,
         }
     });
+
+    formAbout.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        console.log(e)
+        const response = fetch('/learning.php', {
+            method: 'POST',
+            body: new FormData(formAbout)
+        });
+        const result = await response;
+    })
 }
