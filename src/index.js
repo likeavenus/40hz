@@ -5,6 +5,7 @@ import Courses from './components/courses';
 import Smooth from './components/smooth';
 import Animation from './components/animation';
 import Form from './components/form';
+import LearningForm from './components/learning_form';
 
 import './assets/css/styles.scss';
 
@@ -15,3 +16,4 @@ Courses();
 Smooth();
 Animation();
 Form();
+LearningForm();

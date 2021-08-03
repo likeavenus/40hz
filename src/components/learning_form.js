@@ -1,15 +1,20 @@
-export default function Form() {
-	const form = document.querySelector('.contact__form');
-	const formPopup = document.querySelector('.contact__popup');
-	const formPopupTitle = document.querySelector('.contact__popup-title');
+export default function LearningForm() {
+	const learningFormBtn = document.getElementById('submit');
+	const learningForm = document.querySelector('.about__form');
+	const formPopup = document.querySelectorAll('.contact__popup');
+	const formPopupTitle = document.querySelectorAll('.contact__popup-title');
 
-	form.addEventListener('submit', async (e) => {
+	learningFormBtn.addEventListener('click', async (e) => {
+
 		e.preventDefault();
-		const response = await fetch('/mail.php', {
+		const response = await fetch('/learning.php', {
 			method: 'POST',
-			body: new FormData(form)
+			body: new FormData(learningForm)
 		});
+		learningForm.reset();
+
 		const result = await response;
+		console.log(result)
 		if (result.ok) {
 			formPopupTitle.innerText = 'Данные успешно отправлены!';
 			formPopup.classList.add('active');
@@ -26,6 +31,4 @@ export default function Form() {
 			}, 1300);
 		}
 	})
-
-
 }
