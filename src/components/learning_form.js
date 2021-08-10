@@ -1,8 +1,8 @@
 export default function LearningForm() {
 	const learningFormBtn = document.getElementById('submit');
 	const learningForm = document.querySelector('.about__form');
-	const formPopup = document.querySelectorAll('.contact__popup');
-	const formPopupTitle = document.querySelectorAll('.contact__popup-title');
+	const formPopup = document.querySelector('.contact__popup');
+	const formPopupTitle = document.querySelector('.contact__popup-title');
 
 	learningFormBtn.addEventListener('click', async (e) => {
 
@@ -14,7 +14,6 @@ export default function LearningForm() {
 		learningForm.reset();
 
 		const result = await response;
-		console.log(result)
 		if (result.ok) {
 			formPopupTitle.innerText = 'Данные успешно отправлены!';
 			formPopup.classList.add('active');
