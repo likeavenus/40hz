@@ -2,13 +2,23 @@
 
 .reviews {
     margin-bottom: 100px;
+    position: relative;
     @media (min-width: $laptop) {
         margin-bottom: 250px;
     }
 }
 
-.swiper-container {
+.reviews .swiper-container {
     padding-bottom: 40px;
+    height: 100%;
+}
+
+.reviews .swiper-wrapper {
+    height: 100%;
+}
+
+.reviews .swiper-slide {
+    height: 100%;
 }
 
 .reviews__title {
@@ -84,18 +94,23 @@
     }
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-    top: 23%;
-    color: $orange;
-
-    @media (min-width: $laptop) {
-        top: 47%;
+.reviews {
+    .swiper-button-prev,
+    .swiper-button-next {
+        top: 175px;
+        color: $orange;
+    
+        @media (min-width: $laptop) {
+            top: 390px;
+        }
     }
 }
 
+
 .swiper-pagination {
     bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 
     & .swiper-pagination-bullet {
         background-color: $orange;

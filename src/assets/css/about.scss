@@ -1,5 +1,6 @@
 .about {
     padding-bottom: 80px;
+    position: relative;
 
     @media (min-width: $desktop1) {
         padding-bottom: 200px;
@@ -7,9 +8,11 @@
 
     & .swiper-button-prev {
         top: 45%;
+        color: $orange;
     }
     & .swiper-button-next {
         top: 45%;
+        color: $orange;
     }
     & .slider__slide {
         padding: 0;

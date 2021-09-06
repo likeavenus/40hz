@@ -108,6 +108,7 @@ p {
     perspective: 1000;
     transform: translate3d(0, 0, 0);
     transform: translateZ(0);
+    overflow: hidden;
 
     &.main--blured {
         transition: all 0.19s ease;
@@ -157,7 +158,7 @@ p {
 }
 
 ::-webkit-scrollbar {
-    width: 0.2em;
+    width: 0.5em;
 }
 
 body::-webkit-scrollbar-track {
