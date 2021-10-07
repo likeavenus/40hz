@@ -11,6 +11,9 @@ export default function Welcome() {
     const submitBtn = document.querySelector('.send__about');
     const welcomeSubtitle = document.querySelector('.welcome__subtitle');
     const formAbout = document.querySelector('.about__form');
+	const formPopupTitle = document.querySelector('.contact__popup-title');
+	const formPopup = document.querySelector('.contact__popup');
+
 
     const onPopupOpened = (action) => {
         if (action === 'add') {
@@ -52,11 +55,25 @@ export default function Welcome() {
 
     formAbout.addEventListener('submit', async (e) => {
         e.preventDefault();
-        console.log(e)
         const response = fetch('/learning.php', {
             method: 'POST',
             body: new FormData(formAbout)
         });
         const result = await response;
+        if (result.ok) {
+            formPopupTitle.innerText = 'Данные успешно отправлены!';
+			formPopup.classList.add('active');
+			setTimeout(() => {
+				formPopup.classList.remove('active');
+				formPopupTitle.innerText = '';
+			}, 1300);
+        } else {
+            formPopupTitle.innerText = 'Произошла ошибка, попробуйте позднее!';
+			formPopup.classList.add('active');
+			setTimeout(() => {
+				formPopup.classList.remove('active');
+				formPopupTitle.innerText = '';
+			}, 1300);
+        }
     })
 }
