@@ -15,19 +15,20 @@ export default function LearningForm() {
 
 		const result = await response;
 		if (result.ok) {
-			formPopupTitle.innerText = 'Данные успешно отправлены!';
+			formPopupTitle.innerText = 'Спасибо! Мы скоро свяжемся с вами!';
+			fbq('track', 'Lead');
 			formPopup.classList.add('active');
 			setTimeout(() => {
 				formPopup.classList.remove('active');
 				formPopupTitle.innerText = '';
-			}, 1300);
+			}, 1600);
 		} else {
 			formPopupTitle.innerText = 'Произошла ошибка, попробуйте позднее!';
 			formPopup.classList.add('active');
 			setTimeout(() => {
 				formPopup.classList.remove('active');
 				formPopupTitle.innerText = '';
-			}, 1300);
+			}, 1500);
 		}
 	})
 }
