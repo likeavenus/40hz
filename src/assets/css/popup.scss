@@ -131,7 +131,7 @@
 	padding: 5px 10px;
 
 	&::placeholder {
-		color: #fff;
+		color: gray;
 	}
 
 	@media (min-width: $laptop) {
@@ -145,4 +145,9 @@
 	display: block;
 	margin: 0 auto;
 	color: #fff;
+
+	&:disabled {
+		background-color: gray;
+		pointer-events: none;
+	}
 }
